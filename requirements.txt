@@ -1,0 +1,5 @@
+robotframework-seleniumlibrary
+robotframework-debuglibrary
+robotframework-faker
+pyyaml
+robotframework

@@ -1,0 +1,5 @@
+CONFIG:
+  BROWSER:
+    NAME: chrome
+    URL: https://www.victorhugo.com.br/store/access
+    IMPLICITY_WAIT: 30

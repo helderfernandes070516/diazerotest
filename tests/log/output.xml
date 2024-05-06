@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.5 on win32)" generated="2024-05-06T14:53:17.456264" rpa="false" schemaversion="5">
+<suite id="s1" name="myAccountFeature" source="C:\Users\helde\Downloads\ROBOT FRAMEWORK\tests\features\myAccountFeature.robot">
+<test id="s1-t1" name="Cenário: Validando edição das informações do usuário" line="11">
+<kw name="Open Session" owner="hooks" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-06T14:53:18.094247" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${CONFIG.BROWSER.NAME}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-06T14:53:18.093228" elapsed="1.506412"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-05-06T14:53:19.600776" level="INFO">Opening url 'https://www.victorhugo.com.br/store/access'</msg>
+<arg>${CONFIG.BROWSER.URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-05-06T14:53:19.600776" elapsed="0.415412"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${CONFIG.BROWSER.IMPLICITY_WAIT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2024-05-06T14:53:20.017201" elapsed="0.000996"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-06T14:53:20.018197" elapsed="0.024917"/>
+</kw>
+<status status="PASS" start="2024-05-06T14:53:18.092704" elapsed="1.951417"/>
+</kw>
+<kw name="Dado que o usuário tenha realizado login com sucesso" owner="kws_myaccount">
+<kw name="Realizar login" owner="common">
+<kw name="Dado que o usuário esteja na tela de Login do Victor Hugo" owner="kws_signin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SIGNIN.username_input}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-06T14:53:20.045296" elapsed="0.040829"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SIGNIN.username_password}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-06T14:53:20.087130" elapsed="0.060192"/>
+</kw>
+<status status="PASS" start="2024-05-06T14:53:20.044121" elapsed="0.104202"/>
+</kw>
+<kw name="Quando inserir o login e senha cadastrados e clicar em Entrar" owner="kws_signin">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-06T14:53:20.148323" level="INFO">Typing text 'helder.070516@gmail.com' into text field '//*[@data-testid="sign-in-username-input"]'.</msg>
+<arg>${SIGNIN.username_input}</arg>
+<arg>${AUTH.EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-06T14:53:20.148323" elapsed="0.245756"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-06T14:53:20.395105" level="INFO">Typing text 'H3ld3r@2024' into text field '//*[@data-testid="sign-in-password-input"]'.</msg>
+<arg>${SIGNIN.username_password}</arg>
+<arg>${AUTH.PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-06T14:53:20.394079" elapsed="0.072879"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-06T14:53:20.466958" level="INFO">Clicking element '//*[@id="headlessui-tabs-panel-3"]/div/section[2]/form/button'.</msg>
+<arg>${SIGNIN.submit_login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-06T14:53:20.466958" elapsed="0.033627"/>
+</kw>
+<status status="PASS" start="2024-05-06T14:53:20.148323" elapsed="0.352262"/>
+</kw>
+<kw name="Então deve ser direcionado para a tela de minha conta" owner="kws_signin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SIGNIN.submit_logout_btn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-06T14:53:20.500585" elapsed="0.923348"/>
+</kw>
+<status status="PASS" start="2024-05-06T14:53:20.500585" elapsed="0.923348"/>
+</kw>
+<kw name="E a mensagem &quot;Olá&quot;, &quot;Helder Fernandes&quot; deve ser apresentada" owner="kws_signin" source_name="E a mensagem &quot;${MESSAGE1}&quot;, &quot;${MESSAGE2}&quot; deve ser apresentada">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${MESSAGE1}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-06T14:53:21.423933" elapsed="0.008882"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${MESSAGE2}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-06T14:53:21.432815" elapsed="0.007817"/>
+</kw>
+<status status="PASS" start="2024-05-06T14:53:21.423933" elapsed="0.016699"/>
+</kw>
+<status status="PASS" start="2024-05-06T14:53:20.044121" elapsed="1.396511"/>
+</kw>
+<status status="PASS" start="2024-05-06T14:53:20.044121" elapsed="1.396511"/>
+</kw>
+<kw name="E acessar a sessão de &quot;Minhas informações&quot;" owner="kws_myaccount">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-06T14:53:21.441954" level="INFO">Clicking element '//*[contains(text(), 'Minhas informações')]'.</msg>
+<arg>${MYACCOUNT.BTN_MYINFORMATIONS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-06T14:53:21.441954" elapsed="0.055073"/>
+</kw>
+<status status="PASS" start="2024-05-06T14:53:21.440632" elapsed="0.056395"/>
+</kw>
+<kw name="Quando realizar a edição dos campos e clicar em Salvar dados" owner="kws_myaccount">
+<kw name="Name" owner="FakerLibrary">
+<msg time="2024-05-06T14:53:21.498027" level="INFO">${NEW_FAKER_NAME} = Brayan Peixoto</msg>
+<var>${NEW_FAKER_NAME}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2024-05-06T14:53:21.498027" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-06T14:53:21.498027" level="INFO">Clicking element 'id=rcc-confirm-button'.</msg>
+<arg>id=rcc-confirm-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-06T14:53:21.498027" elapsed="0.056198"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${MY_INFORMATIONS.INPUT_NAME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-06T14:53:21.554225" elapsed="0.116214"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-06T14:53:21.671920" level="INFO">Typing text 'Brayan Peixoto' into text field 'id=name'.</msg>
+<arg>${MY_INFORMATIONS.INPUT_NAME}</arg>
+<arg>${NEW_FAKER_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-06T14:53:21.670439" elapsed="0.079908"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${MY_INFORMATIONS.BTN_SAVE}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-05-06T14:53:21.751353" elapsed="0.289417"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-06T14:53:22.041768" level="INFO">Clicking element '//*[@data-testid='sign-up-save-changes-button']'.</msg>
+<arg>${MY_INFORMATIONS.BTN_SAVE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-06T14:53:22.040770" elapsed="0.046127"/>
+</kw>
+<status status="PASS" start="2024-05-06T14:53:21.497027" elapsed="0.590870"/>
+</kw>
+<kw name="Então a edição deve ser realizada com sucesso" owner="kws_myaccount">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Dados alterados com sucesso!</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-06T14:53:22.087897" elapsed="4.981078"/>
+</kw>
+<status status="PASS" start="2024-05-06T14:53:22.087897" elapsed="4.982077"/>
+</kw>
+<kw name="Close Session" owner="hooks" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-05-06T14:53:27.196069" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-56.png"&gt;&lt;img src="selenium-screenshot-56.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-05-06T14:53:27.069974" elapsed="0.127387"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-06T14:53:27.197361" elapsed="2.282336"/>
+</kw>
+<status status="PASS" start="2024-05-06T14:53:27.069974" elapsed="2.409723"/>
+</kw>
+<tag>MYACCOUNT-1</tag>
+<status status="PASS" start="2024-05-06T14:53:18.092011" elapsed="11.387686"/>
+</test>
+<doc>Como usuário quero acessar o site do Victor Hugo e ao inserir minhas credenciais
+quero que seja possível realizar um login com sucesso</doc>
+<status status="PASS" start="2024-05-06T14:53:17.457265" elapsed="12.024368"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">MYACCOUNT-1</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="myAccountFeature">myAccountFeature</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
